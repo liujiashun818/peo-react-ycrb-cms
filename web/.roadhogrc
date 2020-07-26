@@ -1,0 +1,92 @@
+{
+    "entry": "src/main/frontend/modules/*.js",
+    "multipage":true,
+    "outputPath": "./src/main/resources/static",
+    "publicPath": "./",
+    "disableCSSModules": false,
+    "autoprefixer": null,
+    "proxy": {
+      "/captcha": {
+                        //"target": "http://vweb.people.cn/test/xzrbc/cms/auth",
+                        //"target": "http://vapi.cdrb.com.cn/cms/v2/auth",
+                        //"target": "http://tapi.peopletech.cn/cms/auth",
+                        //"target": "http://10.3.36.70:8090/auth",
+                        //"target": "http://v2cms.cdrb.com.cn/auth",
+                        //"target": "http://172.30.4.105:8090/auth",
+                         "target": "http://10.50.162.159:8090/captcha",
+                        //"target": "http://172.30.4.55:8090/captcha", // 徐云龙本地ip
+                     //  "target": "http://172.30.4.59:8090/captcha", // 尹璇本地ip
+                        //"target": "http://10.3.38.58:8090/captcha",
+                         "pathRewrite": { "^/captcha" : "" },
+
+                        "changeOrigin": true
+
+                    },
+        "/api/ueditor": {
+            //"target": "http://vweb.people.cn/test/xzrbc/cms/api/ueditor",
+            //"target": "http://vapi.cdrb.com.cn/cms/v2/api/ueditor",
+            //"target": "http://tapi.peopletech.cn/cms/api/ueditor",
+            //"target": "http://10.3.36.70:8090/api/ueditor",
+            //"target": "http://v2cms.cdrb.com.cn/api/ueditor",
+            //"target": "http://172.30.4.105:8090/api/ueditor",
+            "target": "http://10.50.162.159:8090/api/ueditor",
+            //"target": "http://10.3.38.58:8090/api/ueditor",
+            //"target": "http://172.30.4.59:8090/api/ueditor",
+            "changeOrigin": true,
+            "pathRewrite": { "^/api/ueditor" : "" }
+        },
+        "/api/dashboard": {
+            //"target": "http://172.30.4.105:8090/mockapi/dashboard",
+            //"target": "http://v2cms.cdrb.com.cn/mockapi/dashboard",
+            //"target": "http://10.3.36.70:8090/mockapi/dashboard",
+            //"target": "http://vapi.cdrb.com.cn/cms/v2/mockapi/dashboard",
+            //"target": "http://tapi.peopletech.cn/cms/mockapi/dashboard",
+
+            "target": "http://10.50.162.159:8090/mockapi/dashboard",
+
+            "changeOrigin": true,
+            "pathRewrite": { "^/api/dashboard" : "" }
+        },
+        "/api": {
+            //"target": "http://vweb.people.cn/test/xzrbc/cms/api",
+            //"target": "http://vapi.cdrb.com.cn/cms/v2/api",
+            //"target": "http://tapi.peopletech.cn/cms/api",
+            //"target": "http://v2cms.cdrb.com.cn/api",
+            //"target": "http://10.3.36.70:8090/api",
+            //"target": "http://172.30.4.105:8090/api",
+            //"target": "http://10.3.38.58:8090/api",
+            "target": "http://10.50.162.159:8090/api",
+            //"target": "http://172.30.4.55:8090/api", // 徐云龙本地ip
+            //"target": "http://172.30.4.59:8090/api",
+            "changeOrigin": true,
+            "pathRewrite": { "^/api" : "" }
+        },
+        "/auth": {
+            //"target": "http://vweb.people.cn/test/xzrbc/cms/auth",
+            //"target": "http://vapi.cdrb.com.cn/cms/v2/auth",
+            //"target": "http://tapi.peopletech.cn/cms/auth",
+            //"target": "http://10.3.36.70:8090/auth",
+            //"target": "http://v2cms.cdrb.com.cn/auth",
+            //"target": "http://172.30.4.105:8090/auth",
+            "target": "hhttp://10.50.162.159:8090/auth",
+            //"target": "http://10.3.38.58:8090/auth",
+            //"target": "http://172.30.4.55:8090/auth", // 徐云龙本地ip 
+           // "target": "http://172.30.4.59:8090/auth",
+            "changeOrigin": true,
+            "pathRewrite": { "^/auth" : "" }
+        }
+
+    },
+    "theme": "./src/main/frontend/theme.js",
+    "extraBabelPlugins": [
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "style": true }]
+    ],
+    "env": {
+        "development": {
+            "extraBabelPlugins": [
+                "dva-hmr"
+            ]
+        }
+    }
+}

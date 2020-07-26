@@ -1,0 +1,101 @@
+.liveRoom {
+	font-size: 12px;
+	:global {
+		.ant-collapse {
+			margin-bottom: 30px;
+		}
+		
+		.info-row {
+			line-height: 1.5;
+			margin-bottom: 16px;
+			.label-col {
+				text-align: right;
+			}
+		}
+		
+		.speak-form {
+			textarea {
+				padding: 10px 12px;
+			}
+		}
+
+		.comment-item {
+			padding: 10px;
+			margin-bottom: 10px;
+			border-radius: 3px;
+			.item-icon {
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				border: 1px solid #d9d9d9;
+				background: no-repeat center center;
+				background-size: cover;
+			}
+			.row {
+				margin-bottom: 10px;
+			}
+			.row-t {
+				clear: both;
+				.col-l {
+					width: 32px;
+					height: 32px;
+					float: left;
+				}
+				.col-m {
+					margin: 0 150px 0 32px;
+					padding: 8px 6px;
+				}
+				.col-r {
+					float: right;
+					width: 150px;
+					height: 32px;
+					text-align: right;
+					.ant-btn:first-child {
+						margin-right: 6px;
+					}
+				}
+			}
+			.row-m {
+				p:not(:last-child) {
+					margin-bottom: 10px;
+				}
+				img {
+					max-width: 180px;
+					auto: auto;
+				}
+			}
+		}
+		
+		.reply-item {
+			padding: 10px;
+			color: #c09853;
+			background: #fcf8e3;
+		}
+
+		.talk-card {
+			.comment-item {
+				&.on {
+					color: #468847;
+					background: #dff0d8;
+				}
+				&.off {
+					color: #555;
+					background: #ccc;
+				}
+			}
+		}
+		.comment-card {
+			.comment-item {
+				&.on {
+					color: #b94a48;
+					background: #f2dede;
+				}
+				&.off {
+					color: #555;
+					background: #ccc;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+package ${packageName}.modules.${moduleName}.model;
+
+import cn.people.one.modules.base.entity.BaseEntity;
+import lombok.Data;
+import org.nutz.dao.entity.annotation.*;
+
+/**
+* ${functionName}
+* @author ${author}
+*/
+@Table("${moduleName}_${tableName}")
+@Data
+public class ${ClassName} extends BaseEntity {
+
+    @Column
+    @ColDefine(width = 200)
+    @Comment("标题")
+    private String title;
+
+}

@@ -1,0 +1,44 @@
+target/
+logs/
+log/
+*.log
+classes/
+bin/
+!.mvn/wrapper/maven-wrapper.jar
+
+### Node ###
+bower_components
+node_modules
+node
+*.log
+asciidoctor.css
+README.html
+built
+dump.rdb
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.DS_Store
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Elastic Data ###
+**/data/elasticsearch
+web/src/test/

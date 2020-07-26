@@ -1,0 +1,12 @@
+package ${packageName}.modules.${moduleName}.service;
+
+import cn.people.one.modules.base.service.IBaseService;
+import cn.people.one.modules.${moduleName}.model.${ClassName};
+
+/**
+* ${functionName}Service
+* @author ${author}
+*/
+public interface I${ClassName}Service extends IBaseService<${ClassName}>{
+
+}

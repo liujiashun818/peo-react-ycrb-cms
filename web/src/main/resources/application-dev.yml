@@ -1,0 +1,173 @@
+# server configuration
+server:
+    port: 8090
+    context-path: /
+        # https configuration
+        #ssl:
+        #key-store: classpath:keystore.p12
+        #key-password: one
+        #key-store-type: PKCS12
+    #key-alias: tomcat
+
+#------------------
+# Theone应用配置
+#------------------
+theone:
+    project:
+        code: code_ycrb
+        rootId: 0
+        adminPath: admin
+        #TODO 音视频、图片等文件访问前缀
+        accessDomain: http://img.ycfbapp.com/
+    elasticsearch:
+        index.name: ycrb_cms_article_index
+        type: article
+        ask.index.name: ycrb_cms_ask_index
+        ask.type: ask
+    file:
+        types: gif,png,txt,jpg,jpeg,mp3,mp4
+        ## picture upload limit
+        image:
+            size: 5242880
+        media:
+            size: 314572800
+        # TODO 临时文件路径
+        temp: /home/nas/temp
+    sso: false
+    # 将此值传给前端以次判断是否有权限
+    front:
+        pushButton: true
+
+# CAS服务地址
+cas:
+    server: http://localhost:8443
+    client: http://localhost:8080
+
+#-----------------------
+# spring configuration
+#-----------------------
+spring:
+    profiles:
+        active:
+    session:
+        store-type: redis
+    # TODO datasource configuration
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://10.0.2.11:3306/ycrb_cms?useSSL=false&useUnicode\=true&characterEncoding\=utf-8
+        username: admin
+        password: nqD3WSpb
+        initialize: true
+        #检测数据库的查询语句
+        validation-query: select 1 from dual
+        test-on-borrow: true
+        #每隔五分钟检测空闲超过10分钟的连接
+        min-evictable-idle-time-millis: 600000
+        time-between-eviction-runs-millis: 300000
+    # Api setting
+    jackson:
+        default-property-inclusion: non_empty
+    # TODO elasticsearch configuration
+    data:
+        elasticsearch:
+            properties:
+                host: 10.50.162.159
+                port: 9300
+            cluster-name: elasticsearch
+    # file upload size configuration
+    http:
+        multipart:
+            max-file-size: 300MB
+            max-request-size: 600MB
+    # TODO redis configuration
+    redis:
+        database: 1
+        host: 10.50.162.159
+        password: p4y7aMXOrZAxzomB
+        port: 6379
+        pool:
+            max-idle: 100
+            min-idle: 1
+            max-active: 1000
+            max-wait: -1
+        timeout: 3600
+
+# management security setting
+management:
+    security:
+        enabled: false
+
+# logging setting
+logging:
+    path: log
+    level:
+        root: INFO
+        org:
+            springframework:
+                web: WARN
+        io.swagger.models.parameters.AbstractSerializableParameter: error
+
+# shiro credential
+credential:
+    hashAlgorithm: SHA-1
+    hashInteration: 1024
+    saltSize: 8
+
+#-----------------------
+# 第三方服务配置
+#-----------------------
+# aliyun configuration
+aliyun:
+    oss:
+        bucket: rmrbpre
+        mediaBucket: medias-source
+        key: LTAINeFRLXjTKSlo
+        secret: Ubmt44uMcPGfjsYAx6PFfeWoVdo8dh
+        location: cn-beijing
+        endpoint: http://oss-cn-beijing.aliyuncs.com/
+        mediaEndpoint: http://medias-source.oss-cn-beijing.aliyuncs.com
+        mnsEndpoint: http://1235141528253834.mns.cn-beijing.aliyuncs.com
+        mtsEndpoint: http://mts.cn-beijing.aliyuncs.com
+        directory: ycrb-dev/dir/
+        videoDir: ycrb-dev/mp4Files/
+        audioDir: ycrb-dev/mp3Files/
+        queue: ycrb-dev
+        url: http://rmrbpre.img-cn-beijing.aliyuncs.com/
+        #文件上传分片的大小，阿里云上传文件时分片数量不能超过10000个，如果文件上传为10000MB，则分片大小不能低于1MB
+        part.size: 512000
+
+# TODO client push setting
+gexin:
+    appId: l8boXnMZPt9l3qudcA6Q21
+    appKey: 5Mpu13WDon9XPiXLIvsLK4
+    masterSecret: EREgY0LbJK9xe9sUpDu6U2
+    url: http://sdk.open.api.igexin.com/apiex.htm
+#极光推送配置
+jpush:
+    masterSecret: 98a7918ee199311fe4de0625
+    appKey: e473736ee8640e0ab943c3cb
+# 邀请码参数配置
+activitycode:
+    domain: http://localhost:8090/api/
+    appId:
+# TODO 安卓版本更新地址
+android:
+    version:
+
+# TODO 微信二次分享参数配置
+wechat:
+    appId:
+    appSecret:
+
+# TODO 上传配置
+upload:
+    domain: ${theone.project.accessDomain}/
+    useAliyun: true
+    uploadBasePath:
+
+# TODO http 接口交互
+http:
+    # TODO 政务(入住)系统接口地址
+    publiccms: http://10.50.162.40:8282/publiccms/
+    # TODO H5页面地址
+    vshare: http://10.50.162.159:8999/#/

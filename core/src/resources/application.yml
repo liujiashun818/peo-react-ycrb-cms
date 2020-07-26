@@ -1,0 +1,121 @@
+# server configuration
+server:
+    port: 8080
+    context-path: /
+    # https configuration
+    #ssl:
+        #key-store: classpath:keystore.p12
+        #key-password: theone
+        #key-store-type: PKCS12
+        #key-alias: tomcat
+
+#------------------
+# Theone应用配置
+#------------------
+theone:
+    project:
+        code: theone
+        rootId: 0
+        adminPath: admin
+    # custom rabbitmq configuration
+    rabbitmq:
+        resource.type: article_log
+        resource.handler: index
+        config.project: theone
+        config.separator: _
+        handler.owner: api
+        queue.notice: aleration
+    # custom elasticsearch configuration
+    elasticsearch:
+        index.name: theone_article_index
+        type: article
+    file:
+        types: gif,png,txt,jpg,jpeg
+
+#-----------------------
+# spring configuration
+#-----------------------
+spring:
+    profiles:
+        active:
+    # datasource configuration
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://10.10.59.164:3306/theone?useSSL=false&useUnicode\=true&characterEncoding\=utf-8
+        username: peopledata
+        password: 2016.P@axTM7VF!pCKXEq.0111
+    # rabbitmq configuration
+    rabbitmq:
+        host: 10.100.10.86
+        port: 15672
+        username: user
+        password: password
+        virtual-host: /
+        exchange-topic: theone_topic_exchange
+    # Api setting
+    jackson:
+        default-property-inclusion: non_empty
+    # elasticsearch configuration
+    data:
+        elasticsearch:
+              properties:
+                    host: 10.100.10.86
+                    port: 9300
+              cluster-name: theone
+    # file upload size configuration
+    http:
+        multipart:
+              max-file-size: 1MB
+              max-request-size: 10MB
+    # redis configuration
+    redis:
+        database: 2
+        host: 172.31.87.101
+        password:
+        port: 6379
+        pool:
+            max-idle: 100
+            min-idle: 1
+            max-active: 1000
+            max-wait: -1
+        timeout: 3600
+
+# management security setting
+management:
+    security:
+        enabled: false
+
+# logging setting
+logging:
+  level: info
+  path: log
+
+#-----------------------
+# 第三方服务配置
+#-----------------------
+# aliyun configuration
+aliyun:
+    oss:
+        bucket: rmrbpre
+        mediaBucket: medias-source
+        key: LTAINeFRLXjTKSlo
+        secret: Ubmt44uMcPGfjsYAx6PFfeWoVdo8dh
+        location: cn-beijing
+        endpoint: http://oss-cn-beijing.aliyuncs.com/
+        mediaEndpoint: http://medias-source.oss-cn-beijing.aliyuncs.com
+        mnsEndpoint: http://1235141528253834.mns.cn-beijing.aliyuncs.com
+        mtsEndpoint: http://mts.cn-beijing.aliyuncs.com
+        directory: test/dir2/
+        videoDir: m3u8Files/
+        audioDir: mp3files/
+        queue: medias
+        url: http://rmrbpre.img-cn-beijing.aliyuncs.com/
+        #文件上传分片的大小，阿里云上传文件时分片数量不能超过10000个，如果文件上传为10000MB，则分片大小不能低于1MB
+        part.size: 512000
+
+# client push setting
+gexin:
+    appId: sKdrtF4svj8FMycaCvJmcA
+    appKey: jlRlZKmMTL9hyesRI6SHB4
+    masterSecret: KjHpsfs3nv8DL2iOcsQm61
+    url: http://sdk.open.api.igexin.com/apiex.htm

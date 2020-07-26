@@ -1,0 +1,164 @@
+# server configuration
+server:
+    port: 8090
+    context-path: /
+    # https configuration
+    #ssl:
+        #key-store: classpath:keystore.p12
+        #key-password: one
+        #key-store-type: PKCS12
+        #key-alias: tomcat
+
+#------------------
+# Theone应用配置
+#------------------
+theone:
+    project:
+        code: ycrb
+        rootId: 0
+        adminPath: admin
+        #TODO 老数据音视频、图片等文件访问前缀
+        accessDomain: http://img.ycfbapp.com/
+    elasticsearch:
+        index.name: ycrb_cms_article_index
+        type: article
+        ask.index.name: ycrb_cms_ask_index
+        ask.type: ask
+    file:
+        types: gif,png,txt,jpg,jpeg,mp3,mp4
+        ## picture upload limit
+        image:
+            size: 5242880
+        media:
+            size: 314572800
+        # TODO 临时文件路径
+        temp: /home/nas/temp
+    sso: false
+    # 将此值传给前端以次判断是否有权限
+    front:
+        pushButton: true
+
+# CAS服务地址
+cas:
+    server: http://localhost:8443
+    client: http://localhost:8080
+
+#-----------------------
+# spring configuration
+#-----------------------
+spring:
+    session:
+      store-type: redis
+    # TODO datasource configuration
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://10.10.13.16:3306/ycrb_cms?useSSL=false&useUnicode\=true&characterEncoding\=utf-8
+        username: admin
+        password: 1qaz@WSX
+    # Api setting
+    jackson:
+        default-property-inclusion: non_empty
+    # TODO elasticsearch configuration
+    data:
+        elasticsearch:
+              properties:
+                    host: 10.10.12.9
+                    port: 9300
+              cluster-name: elasticsearch
+    # file upload size configuration
+    http:
+        multipart:
+              max-file-size: 300MB
+              max-request-size: 600MB
+    # TODO redis configuration
+    redis:
+        database: 1
+        host: 10.10.12.9
+        password: p4y7aMXOrZAxzomB
+        port: 6379
+        pool:
+            max-idle: 100
+            min-idle: 1
+            max-active: 1000
+            max-wait: -1
+        timeout: 3600
+
+# management security setting
+management:
+    security:
+        enabled: false
+
+# logging setting
+logging:
+    path: log
+    level:
+        root: INFO
+        org:
+            springframework:
+                web: WARN
+        io.swagger.models.parameters.AbstractSerializableParameter: error
+
+# shiro credential
+credential:
+    hashAlgorithm: SHA-1
+    hashInteration: 1024
+    saltSize: 8
+
+#-----------------------
+# 第三方服务配置
+#-----------------------
+# TODO aliyun configuration
+aliyun:
+    oss:
+        bucket: rmrbpre
+        mediaBucket: medias-source
+        key: LTAINeFRLXjTKSlo
+        secret: Ubmt44uMcPGfjsYAx6PFfeWoVdo8dh
+        location: cn-beijing
+        endpoint: http://oss-cn-beijing.aliyuncs.com/
+        mediaEndpoint: http://medias-source.oss-cn-beijing.aliyuncs.com
+        mnsEndpoint: http://1235141528253834.mns.cn-beijing.aliyuncs.com
+        mtsEndpoint: http://mts.cn-beijing.aliyuncs.com
+        directory: ycrb-test/dir/
+        videoDir: newycfb/mp4Files/
+        audioDir: newycfb/mp3Files/
+        queue: people-mns
+        url: http://rmrbpre.img-cn-beijing.aliyuncs.com/
+        #文件上传分片的大小，阿里云上传文件时分片数量不能超过10000个，如果文件上传为10000MB，则分片大小不能低于1MB
+        part.size: 512000
+
+# TODO client push configuration
+gexin:
+    appId: l8boXnMZPt9l3qudcA6Q21
+    appKey: 5Mpu13WDon9XPiXLIvsLK4
+    masterSecret: EREgY0LbJK9xe9sUpDu6U2
+    url: http://sdk.open.api.igexin.com/apiex.htm
+#极光推送配置
+jpush:
+    masterSecret: 98a7918ee199311fe4de0625
+    appKey: e473736ee8640e0ab943c3cb
+# 邀请码参数配置
+activitycode:
+    domain: http://localhost:8090/api/
+    appId:
+# TODO 安卓版本更新地址
+android:
+    version: http://appuser.people.com.cn/i/views/version.json?pjcode=1_2017_02_70&devicetype=2
+
+# TODO 微信二次分享参数配置
+wechat:
+    appId: wx687509867f8eca3b
+    appSecret: 9b2161724c7c3cf88cd4028c71177ff5
+
+#上传配置
+upload:
+    domain: ${theone.project.accessDomain}/
+    useAliyun: true
+    uploadBasePath:
+
+# TODO http 接口交互
+http:
+    # TODO 政务(入住)系统cms接口地址
+    publiccms: http://tycpubliccms.peopletech.cn/publiccms/
+    # TODO H5页面地址
+    vshare: http://tycshare.peopletech.cn/#/

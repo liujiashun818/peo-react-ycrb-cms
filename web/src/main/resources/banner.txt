@@ -1,0 +1,20 @@
+${AnsiColor.BRIGHT_GREEN}
+TTTTTTTTTTTTTTTTTTTTTTTHHHHHHHHH     HHHHHHHHHEEEEEEEEEEEEEEEEEEEEEE     OOOOOOOOO     NNNNNNNN        NNNNNNNNEEEEEEEEEEEEEEEEEEEEEE
+T:::::::::::::::::::::TH:::::::H     H:::::::HE::::::::::::::::::::E   OO:::::::::OO   N:::::::N       N::::::NE::::::::::::::::::::E
+T:::::::::::::::::::::TH:::::::H     H:::::::HE::::::::::::::::::::E OO:::::::::::::OO N::::::::N      N::::::NE::::::::::::::::::::E
+T:::::TT:::::::TT:::::THH::::::H     H::::::HHEE::::::EEEEEEEEE::::EO:::::::OOO:::::::ON:::::::::N     N::::::NEE::::::EEEEEEEEE::::E
+TTTTTT  T:::::T  TTTTTT  H:::::H     H:::::H    E:::::E       EEEEEEO::::::O   O::::::ON::::::::::N    N::::::N  E:::::E       EEEEEE
+        T:::::T          H:::::H     H:::::H    E:::::E             O:::::O     O:::::ON:::::::::::N   N::::::N  E:::::E
+        T:::::T          H::::::HHHHH::::::H    E::::::EEEEEEEEEE   O:::::O     O:::::ON:::::::N::::N  N::::::N  E::::::EEEEEEEEEE
+        T:::::T          H:::::::::::::::::H    E:::::::::::::::E   O:::::O     O:::::ON::::::N N::::N N::::::N  E:::::::::::::::E
+        T:::::T          H:::::::::::::::::H    E:::::::::::::::E   O:::::O     O:::::ON::::::N  N::::N:::::::N  E:::::::::::::::E
+        T:::::T          H::::::HHHHH::::::H    E::::::EEEEEEEEEE   O:::::O     O:::::ON::::::N   N:::::::::::N  E::::::EEEEEEEEEE
+        T:::::T          H:::::H     H:::::H    E:::::E             O:::::O     O:::::ON::::::N    N::::::::::N  E:::::E
+        T:::::T          H:::::H     H:::::H    E:::::E       EEEEEEO::::::O   O::::::ON::::::N     N:::::::::N  E:::::E       EEEEEE
+      TT:::::::TT      HH::::::H     H::::::HHEE::::::EEEEEEEE:::::EO:::::::OOO:::::::ON::::::N      N::::::::NEE::::::EEEEEEEE:::::E
+      T:::::::::T      H:::::::H     H:::::::HE::::::::::::::::::::E OO:::::::::::::OO N::::::N       N:::::::NE::::::::::::::::::::E
+      T:::::::::T      H:::::::H     H:::::::HE::::::::::::::::::::E   OO:::::::::OO   N::::::N        N::::::NE::::::::::::::::::::E
+      TTTTTTTTTTT      HHHHHHHHH     HHHHHHHHHEEEEEEEEEEEEEEEEEEEEEE     OOOOOOOOO     NNNNNNNN         NNNNNNNEEEEEEEEEEEEEEEEEEEEEE
+${AnsiColor.BRIGHT_RED}
+Application Version: ${application.version}${application.formatted-version}
+Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}

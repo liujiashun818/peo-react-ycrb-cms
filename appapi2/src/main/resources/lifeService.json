@@ -1,0 +1,44 @@
+[
+  {
+    "title": "美食",
+    "icon": "http://img.sxrbw.com/data//userfiles/1/images/cms/article/2018/05/1526973726704.png",
+    "news_link": "http://m.dianping.com/shoplist/35/d/1/c/10/s/s_-1",
+    "display": "yes"
+  },
+  {
+    "title": "电影",
+    "icon": "http://img.sxrbw.com/data//userfiles/1/images/cms/article/2018/05/1526979958041.png",
+    "news_link": "http://m.maoyan.com/#type=movies",
+    "display": "yes"
+  },
+  {
+    "title": "高速路况",
+    "icon": "http://img.sxrbw.com/data//userfiles/1/images/cms/article/2018/05/1526979977734.png",
+    "news_link": "http://m.icauto.com.cn/gonglu/",
+    "display": "yes"
+  },
+  {
+    "title": "公交",
+    "icon": "http://img.sxrbw.com/data//userfiles/1/images/cms/article/2018/05/1526979995481.png",
+    "news_link": "http://m.8684.cn/taiyuan_bus",
+    "display": "yes"
+  },
+  {
+    "title": "快递",
+    "icon": "http://img.sxrbw.com/data//userfiles/1/images/cms/article/2018/05/1526973750935.png",
+    "news_link": "http://m.kuaidi100.com/",
+    "display": "yes"
+  },
+  {
+    "title": "加油站",
+    "icon": "http://img.sxrbw.com/data//userfiles/1/images/cms/article/2018/05/1526980023770.png",
+    "news_link": "http://map.baidu.com/mobile/webapp/search/search/qt=s&wd=%E5%8A%A0%E6%B2%B9%E7%AB%99&c=176/",
+    "display": "yes"
+  },
+  {
+    "title": "外卖",
+    "icon": "http://img.sxrbw.com/data//userfiles/1/images/cms/article/2018/05/1526973775373.png",
+    "news_link": "http://m.58.com/ty/waimai/",
+    "display": "yes"
+  }
+]

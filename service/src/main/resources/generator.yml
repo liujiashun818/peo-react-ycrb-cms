@@ -1,0 +1,6 @@
+packageName: cn.people.one  #包名，基本不变
+ClassName: MediaInfo    #生成类的类名
+moduleName: file     #模块名称
+functionName: 媒体信息  #类的描述
+author: zxz   #作者
+controller: web   #controller模块的目录，web或者app两个值

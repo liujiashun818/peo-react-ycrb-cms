@@ -1,0 +1,21 @@
+{
+    "mappings": {
+        "ask_suggest" : {
+            "properties" : {
+                "id" : {
+                    "type" : "long"
+                },
+                "date" : {
+                    "type" : "long"
+                },
+                "title" : {
+                    "type" : "completion",
+                    "analyzer" : "ik",
+                    "payloads" : true,
+                    "preserve_separators" : true,
+                    "preserve_position_increments" : true
+                }
+            }
+        }
+    }
+}

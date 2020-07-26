@@ -1,0 +1,21 @@
+package ${packageName}.modules.${moduleName}.service.impl;
+
+import cn.people.one.core.base.dao.BaseDao;
+import cn.people.one.modules.base.service.impl.BaseService;
+import cn.people.one.modules.${moduleName}.model.${ClassName};
+import cn.people.one.modules.${moduleName}.service.I${ClassName}Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+* ${functionName}Service
+* @author ${author}
+*/
+@Service
+public class ${ClassName}Service extends BaseService<${ClassName}> implements I${ClassName}Service {
+
+    @Autowired
+    private BaseDao dao;
+
+}

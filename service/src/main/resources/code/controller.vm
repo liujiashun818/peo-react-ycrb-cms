@@ -1,0 +1,52 @@
+package ${packageName}.modules.${moduleName}.web;
+
+import cn.people.one.core.base.api.Result;
+import cn.people.one.modules.${moduleName}.model.${ClassName};
+import cn.people.one.modules.${moduleName}.service.I${ClassName}Service;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.nutz.dao.Cnd;
+import org.nutz.dao.Condition;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import static cn.people.one.core.base.page.SimplePage.DEF_PAGE_SIZE;
+
+/**
+* ${functionName}Controller
+* @author ${author}
+*/
+@RestController
+@RequestMapping("/${adminPath}/${moduleName}/${controllerPath}/")
+@Slf4j
+public class ${ClassName}Controller {
+
+    @Autowired
+    private I${ClassName}Service ${className}Service;
+
+    @RequestMapping(method = RequestMethod.GET)
+    public Result list(@RequestParam String title, @RequestParam Integer pageNumber, @RequestParam Integer pageSize) {
+        Condition cnd = Cnd.NEW();
+        if(StringUtils.isNotEmpty(title)){
+            cnd = Cnd.where("title", "=", title);
+        }
+        return Result.success(${className}Service.listPage(pageNumber, pageSize, cnd, "id|title"));
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Result view(@PathVariable Long id) {
+        return Result.success(${className}Service.fetch(id));
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public Result save(@RequestBody ${ClassName} ${className}) {
+        ${className}Service.save(${className});
+        return Result.success(${className});
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public Result delete(@PathVariable Long id) {
+        return Result.success(${className}Service.delete(id));
+    }
+
+}

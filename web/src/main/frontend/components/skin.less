@@ -1,0 +1,50 @@
+@import "./vars.less";
+
+:global {
+    
+    .f-toe1{overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+    .f-toe2{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+    .f-toe3{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;}
+    
+    .mt10{
+        margin-top:10px;
+    }
+    .mb10{
+        margin-bottom:10px;
+    }
+    .ant-modal-mask {
+        background-color: rgba(55, 55, 55, 0.2);
+    }
+
+    .ant-modal-content {
+        box-shadow: none;
+    }
+
+    .ant-card {
+        &:hover {
+            overflow: auto;
+        }
+    }
+
+    .cus-buttons-wrap {
+        .ant-btn{
+            margin-right: 8px;
+        }
+        .cus-btn-right{
+            float: right;
+            margin-right: 0;
+        }
+    }
+    .cus-panel{
+        margin-bottom:24px;
+    }
+    .cus-hr {
+        border-top:0;
+        margin-bottom: 24px;
+        border-color:#e1e1e1;
+    }
+    .cus-button-orange{
+        background-color: #f05a28;
+        color:#fff;
+    }
+}

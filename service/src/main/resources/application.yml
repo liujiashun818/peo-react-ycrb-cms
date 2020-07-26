@@ -1,0 +1,151 @@
+server:
+  port: 8088
+  context-path: /
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: WARN
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+theone:
+  project:
+    code: code_sxrb
+    rootId: 0
+    adminPath: admin
+    accessDomain: http://10.50.162.159:81
+  # custom elasticsearch configuration
+  elasticsearch:
+    index.name: ycrb_cms_article_index
+    type: article
+  file:
+    types: gif,png,txt,jpg,jpeg
+    image:
+      size: 5242880
+    temp: /home/nas/temp
+  ad:
+    url: http://10.50.162.159:82
+  adStats:
+    url: http://10.50.162.159:81/total/total_api.php
+  httpUrl:
+    newspager:
+      list:
+      detail:
+      date:
+    img: http://img.sxrbw.com/thumbs/394/621
+
+spring:
+  profiles:
+    active: junit
+  session:
+    store-type: redis
+  # datasource configuration
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.50.162.172:18326/ycrb_cms?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: admin
+    password: nqD3WSpb
+  # Api setting
+  jackson:
+    default-property-inclusion: non_empty
+  # elasticsearch configuration
+  data:
+    elasticsearch:
+      properties:
+        host: 10.50.162.159
+        port: 9300
+      cluster-name: elasticsearch
+  # file upload size configuration
+  http:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 10MB
+  # redis configuration
+  redis:
+    database: 2
+    host: 10.50.162.159
+    password: 1qaz@WSX@peoplezx
+    port: 6379
+    pool:
+      max-idle: 100
+      min-idle: 1
+      max-active: 1000
+      max-wait: -1
+    timeout: 3600
+
+aliyun:
+  oss:
+    bucket: rmrbpre
+    mediaBucket: medias-source
+    key: LTAINeFRLXjTKSlo
+    secret: Ubmt44uMcPGfjsYAx6PFfeWoVdo8dh
+    location: cn-beijing
+    endpoint: http://oss-cn-beijing.aliyuncs.com/
+    mediaEndpoint: http://medias-source.oss-cn-beijing.aliyuncs.com
+    mnsEndpoint: http://1235141528253834.mns.cn-beijing.aliyuncs.com
+    mtsEndpoint: http://mts.cn-beijing.aliyuncs.com
+    directory: test/dir2/
+    videoDir: test/mp4Files/
+    audioDir: test/mp3Files/
+    queue: medias-test
+    url: http://rmrbpre.img-cn-beijing.aliyuncs.com/
+    #文件上传分片的大小，阿里云上传文件时分片数量不能超过10000个，如果文件上传为10000MB，则分片大小不能低于1MB
+    part.size: 512000
+
+activitycode:
+  domain: http://localhost:8090/api/
+  appId: cdrb_2_201503
+
+gexin:
+  appId: sKdrtF4svj8FMycaCvJmcA
+  appKey: jlRlZKmMTL9hyesRI6SHB4
+  masterSecret: KjHpsfs3nv8DL2iOcsQm61
+  url: http://sdk.open.api.igexin.com/apiex.htm
+
+#极光推送配置
+jpush:
+  masterSecret: 98a7918ee199311fe4de0625
+  appKey: e473736ee8640e0ab943c3cb
+android:
+  version: http://10.50.162.236:8088/softupdate/getsoftver.php
+
+wechat:
+  appId: wxdeb13511ddea6b40
+  appSecret: 85edf55933e22e96037b2ca7102b2f8a
+
+# TODO (同步其他文件)
+# 上传配置
+upload:
+  domain: ${theone.project.accessDomain}/
+  useAliyun: false
+  #TODO 图片上传路径 img/
+  uploadBasePath: D://test//
+
+# TODO (同步其他文件)http 接口交互
+http:
+  publiccms: http://10.50.162.225:8280/publiccms/
+  upms:
+    url:
+    default.password:
+    wrong.password:
+  trs:
+    url:
+    image.host.one:
+    image.host.two:
+    image.host.three:
+  pushdata:
+    url:
+  recommend:
+    url:
+  keywordsearch:
+    url:
+  sxh-api: http://127.0.0.1:8094/
+  vshare: http://10.50.162.159:84/#/
+  ucenter: http://127.0.0.1:8096/
+newspager:
+  task:
+    fixedRate: 0
+    dir:
+  output:
+    cmsUrl:
